@@ -1,0 +1,19 @@
+{
+  "name": "mfe-dependencies-analyzer",
+  "version": "0.0.1",
+  "description": "Statically analyze your microfrontend code to understand its dependencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "microfrontends",
+    "dependencies",
+    "dependency",
+    "analyze",
+    "analyzer",
+    "single-spa"
+  ],
+  "author": "Carlos Filoteo",
+  "license": "MIT"
+}
