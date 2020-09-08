@@ -1,25 +1,57 @@
 {
   "name": "mfe-dependencies-analyzer",
-  "version": "0.0.1",
   "description": "Statically analyze your microfrontend code to understand its dependencies",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "microfrontends",
-    "dependencies",
-    "dependency",
-    "analyze",
-    "analyzer",
-    "single-spa"
-  ],
+  "version": "0.0.1",
   "author": "Carlos Filoteo",
-  "license": "MIT",
+  "bin": {
+    "mfedeps": "./bin/run"
+  },
+  "bugs": "https://github.com/filoxo/mfe-dependencies-analyzer/issues",
   "dependencies": {
     "@babel/parser": "^7.11.5",
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^3",
+    "cli-ux": "^5.5.0",
     "glob": "^7.1.6",
     "tree-walk": "^0.4.0",
     "workerpool": "^6.0.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/test": "^1",
+    "chai": "^4",
+    "eslint": "^5.13",
+    "eslint-config-important-stuff": "^1.1.0",
+    "mocha": "^5",
+    "nyc": "^14"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/filoxo/mfe-dependencies-analyzer",
+  "keywords": [
+    "analyze",
+    "analyzer",
+    "dependencies",
+    "dependency",
+    "microfrontends",
+    "single-spa"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "oclif": {
+    "bin": "mfedeps"
+  },
+  "repository": "filoxo/mfe-dependencies-analyzer",
+  "scripts": {
+    "posttest": "eslint .",
+    "prepack": "oclif-dev readme",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
+    "version": "oclif-dev readme && git add README.md"
   }
 }
