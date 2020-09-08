@@ -15,5 +15,11 @@
     "single-spa"
   ],
   "author": "Carlos Filoteo",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@babel/parser": "^7.11.5",
+    "glob": "^7.1.6",
+    "tree-walk": "^0.4.0",
+    "workerpool": "^6.0.0"
+  }
 }
