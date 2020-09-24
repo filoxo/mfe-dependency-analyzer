@@ -1,3 +1,6 @@
+# Ignore data since that is generated based on input
+lib/visualize/data.json
+
 # Logs
 logs
 *.log
