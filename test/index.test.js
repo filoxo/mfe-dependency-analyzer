@@ -1,18 +1,12 @@
-const {expect, test} = require('@oclif/test')
-const cmd = require('..')
+const { expect, test } = require("@oclif/test");
+const cmd = require("../lib");
 
-describe('mfe-dependencies-analyzer', () => {
+describe("mfedeps", () => {
   test
-  .stdout()
-  .do(() => cmd.run([]))
-  .it('runs hello', ctx => {
-    expect(ctx.stdout).to.contain('hello world')
-  })
-
-  test
-  .stdout()
-  .do(() => cmd.run(['--name', 'jeff']))
-  .it('runs hello --name jeff', ctx => {
-    expect(ctx.stdout).to.contain('hello jeff')
-  })
-})
+    .stdout()
+    .do(() => cmd.run(["-n", "@test/microfrontend", "-f", "test/src/**/*.js"]))
+    .it("runs with files", (ctx) => {
+      expect(ctx.stdout).to.contain("@test/microfrontend");
+      // expect(ctx.stdout).to.contain("poop");
+    });
+});
