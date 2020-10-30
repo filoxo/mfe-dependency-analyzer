@@ -6,8 +6,15 @@ Generate a simple report to understand the imports across your microfrontend app
 
 ## Development
 
-Run locally
+- `git clone --recursive https://github.com/filoxo/mfe-dependency-analyzer.git`
+- `yarn install`
+- `yarn --cwd mfe-deps-test-repo install`
+- Execute locally
 
 ```sh
-./bin/run -f "src/**/!(*.test|*.spec).js" -n "@example/application" -r
+./bin/run -d mfe-deps-test-repo -f src/**/!(*.test|*.spec).js -r
 ```
+
+### Testing
+
+- `yarn test`
