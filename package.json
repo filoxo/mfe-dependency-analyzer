@@ -52,7 +52,7 @@
   },
   "repository": "filoxo/mfe-dependencies-analyzer",
   "scripts": {
-    "posttest": "eslint .",
+    "posttest": "eslint ./lib",
     "prepack": "oclif-dev readme",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
     "version": "oclif-dev readme && git add README.md"
