@@ -12,7 +12,7 @@ Generate a simple report to understand the imports across your microfrontend app
 - Execute locally
 
 ```sh
-./bin/run -d mfe-deps-test-repo -f src/**/!(*.test|*.spec).js -r
+./bin/run -d mfe-dependencies-test-repo -f "src/**/!(*.test|*.spec).js" -r
 ```
 
 ### Testing
