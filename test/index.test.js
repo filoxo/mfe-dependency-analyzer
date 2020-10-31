@@ -1,14 +1,17 @@
 const { expect, test } = require('@oclif/test')
 const cmd = require('../lib')
 
-const hasErrorMessage = (error) => expect(error.message).to.be.ok
+const hasErrorMessage = (error) => {
+  expect(error).to.be.ok
+  expect(error.message).to.be.ok
+}
 
-const TEST_DIR = 'mfe-dependencies-test-repo'
+const FIXTURE_DIR = 'mfe-dependencies-test-repo'
 
 describe('mfedeps', () => {
   test
     .stdout()
-    .do(() => cmd.run(['-d', TEST_DIR, '-f', 'src/**/!(*.test).js']))
+    .do(() => cmd.run(['-d', FIXTURE_DIR, '-f', 'src/**/!(*.test).js']))
     .it('runs with files', (ctx) => {
       expect(ctx.stdout).to.contain('@example/home')
     })
@@ -22,7 +25,7 @@ describe('mfedeps', () => {
       .it('if --dir does not exist')
 
     test
-      .do(() => cmd.run(['-d', TEST_DIR, '-f', 'src/**/*.not-match.js']))
+      .do(() => cmd.run(['-d', FIXTURE_DIR, '-f', 'src/**/*.not-match.js']))
       .catch(hasErrorMessage)
       .it(`if no --files match in dir`)
   })
