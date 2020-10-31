@@ -1,0 +1,3 @@
+[submodule "mfe-dependencies-test-repo"]
+	path = mfe-dependencies-test-repo
+	url = https://github.com/filoxo/mfe-deps-test-repo.git
