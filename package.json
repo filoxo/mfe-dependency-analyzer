@@ -57,7 +57,7 @@
   "scripts": {
     "posttest": "eslint ./lib",
     "prepack": "oclif-dev readme",
-    "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
+    "test": "MFE_DEPS_TEST_FS=true nyc mocha --forbid-only \"test/**/*.test.js\"",
     "version": "oclif-dev readme && git add README.md"
   },
   "prettier": {
