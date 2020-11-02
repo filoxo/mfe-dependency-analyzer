@@ -4,6 +4,11 @@ Generate a simple report to understand the imports across your microfrontend app
 
 ## Usage
 
+- `yarn add -D mfe-dependencies-analyzer`
+- Add script to package.json:
+  - `"mfedeps": "mfedeps -f \"src/**/!(*.test|*.spec).js\""` to run manually OR
+  - `"posttest": "mfedeps -f \"src/**/!(*.test|*.spec).js\""` to execute after tests pass
+
 ## Development
 
 - `git clone --recursive https://github.com/filoxo/mfe-dependency-analyzer.git`
@@ -25,3 +30,4 @@ The tests use a hybrid of real files ([mfe-dependencies-test-repo](https://githu
 - [memfs](https://github.com/streamich/memfs) creates a virtual file system
 - [unionfs](https://github.com/streamich/unionfs) merges real fs with virtual fs
 - [mock-require](https://github.com/boblauer/mock-require) intercepts and uses the above vfs whenever native fs is called
+- these are setup in `lib/fs.js` dynamically based on `MFE_DEPS_TEST_FS` environment variable. This was the only way I could find to extend fs within the command spawned by tests.
