@@ -17,4 +17,10 @@ Generate a simple report to understand the imports across your microfrontend app
 
 ### Testing
 
-- `yarn test`
+- Run `yarn test`
+
+The tests use a hybrid of real files ([mfe-dependencies-test-repo](https://github.com/filoxo/mfe-deps-test-repo)) and virtual file fixtures. Here's how it works:
+
+- [memfs](https://github.com/streamich/memfs) creates a virtual file system
+- [unionfs](https://github.com/streamich/unionfs) merges real fs with virtual fs
+- [mock-require](https://github.com/boblauer/mock-require) intercepts and uses the above vfs whenever native fs is called
