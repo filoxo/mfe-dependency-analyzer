@@ -5,6 +5,7 @@ const mock = require('mock-require')
 
 // eslint-disable-next-line no-undef
 before(() => {
+  console.log('Setting up /fixtures...\n')
   const json = {
     '/no-files-match': {},
     '/no-pkg-json': {
