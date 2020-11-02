@@ -13,6 +13,7 @@ Generate a simple report to understand the imports across your microfrontend app
 
 ```sh
 ./bin/run -d mfe-dependencies-test-repo -f "src/**/!(*.test|*.spec).js" -r
+# the quoted --files glob above is necessary to prevent some shell file expansion
 ```
 
 ### Testing
