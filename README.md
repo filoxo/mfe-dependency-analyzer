@@ -5,9 +5,12 @@ Generate a simple report to understand the imports across your microfrontend app
 ## Usage
 
 - `yarn add -D mfe-dependencies-analyzer`
-- Add script to package.json:
-  - `"mfedeps": "mfedeps -f \"src/**/!(*.test|*.spec).js\""` to run manually OR
-  - `"posttest": "mfedeps -f \"src/**/!(*.test|*.spec).js\""` to execute after tests pass
+- Add script to package.json
+
+      // to run manually
+      "mfedeps": "mfedeps -f \"src/**/!(*.test|*.spec)js\""
+      // OR execute after tests pass
+      "posttest": "mfedeps -f \"src/**/!(*.test|*.spec)js\""
 
 ## Development
 
