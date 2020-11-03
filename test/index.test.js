@@ -12,9 +12,28 @@ describe('mfedeps', () => {
   test
     .stdout()
     .do(() =>
-      cmd.run(['-d', 'mfe-dependencies-test-repo', '-f', 'src/**/!(*.test).js'])
+      cmd.run([
+        '-d',
+        'mfe-dependencies-test-repo/packages/home',
+        '-f',
+        'src/**/!(*.test).js',
+      ])
     )
-    .it('runs with files', (ctx) => {
+    .it('basic Webpack application', (ctx) => {
       expect(ctx.stdout).to.contain('@example/home')
+    })
+
+  test
+    .stdout()
+    .do(() =>
+      cmd.run([
+        '-d',
+        'mfe-dependencies-test-repo/packages/nav',
+        '-f',
+        'src/**/!(*.test).{js,Svelte}',
+      ])
+    )
+    .it('basic Rollup application', (ctx) => {
+      expect(ctx.stdout).to.contain('@example/nav')
     })
 })
