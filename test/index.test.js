@@ -21,6 +21,9 @@ describe('mfedeps', () => {
     )
     .it('basic Webpack application', (ctx) => {
       expect(ctx.stdout).to.contain('@example/home')
+      expect(ctx.stdout).to.contain('react')
+      expect(ctx.stdout).to.contain('react-dom')
+      expect(ctx.stdout).to.contain('rxjs')
     })
 
   test
@@ -30,10 +33,11 @@ describe('mfedeps', () => {
         '-d',
         'mfe-dependencies-test-repo/packages/nav',
         '-f',
-        'src/**/!(*.test).{js,Svelte}',
+        'src/**/!(*.test).{js,svelte}',
       ])
     )
     .it('basic Rollup application', (ctx) => {
       expect(ctx.stdout).to.contain('@example/nav')
+      expect(ctx.stdout).to.contain('rxjs')
     })
 })
