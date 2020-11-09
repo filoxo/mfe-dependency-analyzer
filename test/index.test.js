@@ -31,6 +31,22 @@ describe('mfedeps', () => {
     .do(() =>
       cmd.run([
         '-d',
+        'mfe-dependencies-test-repo/packages/login',
+        '-f',
+        'src/**/!(*.test).{ts,tsx}',
+      ])
+    )
+    .it('TypeScript Webpack application', (ctx) => {
+      expect(ctx.stdout).to.contain('@example/login')
+      expect(ctx.stdout).to.contain('react')
+      expect(ctx.stdout).to.contain('react-dom')
+    })
+
+  test
+    .stdout()
+    .do(() =>
+      cmd.run([
+        '-d',
         'mfe-dependencies-test-repo/packages/nav',
         '-f',
         'src/**/!(*.test).{js,svelte}',
