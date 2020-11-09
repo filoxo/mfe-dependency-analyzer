@@ -31,7 +31,7 @@ OPTIONS
 
 By default, the output JSON report will be printed to stdout.
 
-```json
+```js
 {
   "name": "@example/home", // application name
   "dependencies": [
