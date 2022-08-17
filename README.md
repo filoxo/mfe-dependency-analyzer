@@ -20,12 +20,14 @@ USAGE
 
 OPTIONS
   -d, --dir=dir      [default: .] Project source dir to analyze
-  -f, --files=files  [default: "src/**/!(*.test|*.spec).js"] Glob pattern of files inside dir to analyze
+  -f, --files=files    [default: "src/**/!(*.test|*.spec).js"] Glob pattern of files inside dir to analyze
   -h, --help         show CLI help
   -n, --name=name    Microfrontend application name
   -r, --visualize    Open local visualization report
   -v, --version      show CLI version
 ```
+
+Note: review [glob patterns](https://github.com/isaacs/node-glob#glob-primer) for details. This pattern may need to be wrapped in quotes to avoid [shell expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Expansions.html).
 
 ### Output
 
